@@ -1,0 +1,144 @@
+.toolbar-option-preview {
+  position: absolute;
+  height: 400px;
+  width: 550px;
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, 0.05);
+  border: 1px solid #f3f3f3;
+  top: 60px;
+  box-sizing: border-box;
+  visibility: visible;
+  opacity: 1;
+  transition: 150ms ease-in-out;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+
+  &.toolbar-option-preview-hidden {
+    visibility: hidden;
+    opacity: 0;
+    transition: 150ms ease-in-out;
+  }
+
+  .arrow-indicator::after {
+    content: "";
+    position: absolute;
+    top: -8px;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid var(--primary-color);
+    transform: rotate(180deg);
+  }
+
+  .right-side-wrapper,
+  .left-side-wrapper {
+    width: 50%;
+    height: 100%;
+    padding: 24px;
+
+    .column {
+      display: flex;
+      flex-direction: column;
+      row-gap: 12px;
+    }
+  }
+
+  .left-side-wrapper {
+    background: var(--primary-color);
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    color: #fff;
+
+    .column-spaced {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .label {
+      font-weight: 700;
+    }
+
+    .description {
+      font-weight: 400;
+      font-size: 12px;
+    }
+
+    .link {
+      text-decoration: underline;
+      font-size: 12px;
+      font-weight: 600;
+    }
+  }
+
+  .right-side-wrapper {
+  }
+}
+
+.market-highs-wrapper {
+  width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+
+  .carousel-control {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background: var(--primary-color);
+    border-radius: 50px;
+    // border: 1px solid #f3f3f3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+
+    &.next {
+      right: 0;
+      top: calc(50% - 12px);
+    }
+
+    &.previous {
+      top: calc(50% - 12px);
+    }
+  }
+
+  .ticker-day-indicator {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    min-width: 85%;
+    border-radius: 6px;
+    row-gap: 4px;
+    // background: #FAFAFB;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #f3f3f3;
+
+    .ticker-image {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+    }
+
+    .ticker {
+      font-size: 12px;
+    }
+
+    .ticker-quotation {
+      font-size: 12px;
+    }
+
+    .close-day-variation {
+      font-size: 10px;
+    }
+
+    + .ticker-day-indicator {
+      margin-left: 8px;
+    }
+  }
+}
