@@ -1,1 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import './imports.scss';
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Inter';
+}
+
+ul {
+  list-style: none;
+}
+
+:root {
+  --grid-width: 1380px;
+  --primary-color: #3E65F2;
+  --primary-text-color: #121826;
+  --secondary-text-color: #5B667C;
+}
+
+.layout-size {
+  max-width: 1380px;
+  margin: 0 auto;
+}
+
+.layout-internal-padding {
+  padding: 0 16px;
+}
