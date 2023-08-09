@@ -1,0 +1,112 @@
+<header class="toolbar-header">
+  <div class="toolbar-market-wrapper">
+    <div class="toolbar-market-indicators layout-size layout-internal-padding">
+      <div class="economy-market-highlights">
+        <span class="label" *ngFor="let highlight of highlights"
+          >{{ highlight.label }}:
+          <span class="value">{{ highlight.value }}</span></span
+        >
+      </div>
+      <div class="economy-market-indicators">
+        <span class="label" *ngFor="let indicator of economyMarketIndicators">
+          {{ indicator.label }}:
+          <span class="value">{{ indicator.value }}</span>
+        </span>
+      </div>
+    </div>
+  </div>
+  <app-divider></app-divider>
+  <div class="nav-bar-wrapper">
+    <nav class="nav-bar layout-size layout-internal-padding">
+      <ul class="nav-menu-items">
+        <li
+          class="nav-menu-item"
+          *ngFor="let option of toolbarOptions"
+          (mouseover)="handleToolbarOptionPreview(option, true)"
+          (mouseout)="handleToolbarOptionPreview(option, false)"
+        >
+          <span class="option-item">{{ option.label }}</span>
+          <app-toolbar-option-preview [option]="option"></app-toolbar-option-preview>
+        </li>
+      </ul>
+      <div class="search">
+        <span class="nav-option">
+          <span class="material-symbols-rounded icon"> star </span>
+          Lista de Interesse
+        </span>
+        <span class="nav-option">
+          <span class="material-symbols-rounded icon"> donut_large </span>
+          Portfólio
+        </span>
+        <input
+          class="search-input"
+          id="search"
+          type="text"
+          pInputText
+          placeholder="Pesquisar"
+          [formControl]="searchInput"
+          (click)="setAutocompleteSuggestions()"
+          (mouseover)="setSuggestionsSafeArea(true)"
+          (mouseout)="setSuggestionsSafeArea(false)"
+        />
+        <div
+          class="autocomplete-ticker-suggestions"
+          [ngClass]="{
+            'autocomplete-ticker-suggestions-closed': !openSuggestions
+          }"
+          (click)="$event.preventDefault()"
+          (mouseover)="setSuggestionsSafeArea(true)"
+          (mouseout)="setSuggestionsSafeArea(false)"
+          (scroll)="onScrollSuggestions($event)"
+        >
+          <ng-container
+            *ngIf="
+              filteredSuggestionsBySeachInput.length <= 0 &&
+              searchInput.value !== ''
+            "
+          >
+            <div class="ticker-not-found">
+              <img src="/assets/svg/clipboard.svg" />
+              <p>Nenhum ativo foi encontrado</p>
+            </div>
+          </ng-container>
+          <ng-container>
+            <div
+              *ngFor="let suggestedTicker of tickerSuggestionsBySearch"
+              class="ticker-suggestion-by-search-input"
+              (mouseover)="
+                toggleSuggestedTickerIndicatorsPreview(true, suggestedTicker)
+              "
+              (mouseout)="
+                toggleSuggestedTickerIndicatorsPreview(false, suggestedTicker)
+              "
+            >
+              <div class="ticker-image-and-name-group">
+                <img
+                  class="ticker-suggestion-image"
+                  [src]="suggestedTicker.logo"
+                />
+                <div class="ticker-enterprise-name">
+                  <span class="ticker-name">{{ suggestedTicker.stock }}</span>
+                  <span class="ticker-company-name">{{
+                    suggestedTicker.name
+                  }}</span>
+                </div>
+              </div>
+              <span class="ticker-type">{{
+                suggestedTicker.close | currency : "BRL"
+              }}</span>
+            </div>
+          </ng-container>
+        </div>
+        <app-ticker-indicators-preview
+          [previewVisibility]="suggestedTickerPreviewVisibility"
+          [suggestedTickerPreview]="suggestedTickerPreview"
+          (mouseover)="setSuggestionsSafeArea(true)"
+          (mouseout)="setSuggestionsSafeArea(false)"
+        ></app-ticker-indicators-preview>
+      </div>
+    </nav>
+  </div>
+  <app-divider></app-divider>
+</header>

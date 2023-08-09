@@ -1,0 +1,196 @@
+.toolbar-header {
+  font-size: 14px;
+
+  .toolbar-market-wrapper {
+    width: 100%;
+    height: 52px;
+
+    .toolbar-market-indicators {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      height: 100%;
+
+      .label {
+        color: #5b667c;
+        & + .label {
+          margin-left: 12px;
+        }
+      }
+
+      .value {
+        color: #3e65f2;
+      }
+    }
+  }
+
+  .nav-bar-wrapper {
+    width: 100%;
+    height: 70px;
+
+    .nav-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+
+      .nav-menu-items {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        position: relative;
+
+        .nav-menu-item {
+          font-weight: 700;
+          cursor: pointer;
+          color: #121826;
+
+          & + .nav-menu-item {
+            margin-left: 30px;
+          }
+
+          &:hover {
+            .option-item {
+              color: var(--primary-color);
+            }
+          }
+        }
+      }
+
+      .search {
+        display: flex;
+        align-items: center;
+        position: relative;
+
+        .nav-option {
+          display: flex;
+          align-items: center;
+          color: #121826;
+          cursor: pointer;
+
+          .icon {
+            margin-right: 5px;
+            color: #a6b0c3;
+          }
+
+          & + .nav-option {
+            margin-left: 15px;
+          }
+        }
+
+        .search-input {
+          margin-left: 25px;
+          font-size: 12px;
+          background-color: #eff2f5;
+          width: 300px;
+          border: none;
+
+          &::placeholder {
+            font-weight: 500;
+          }
+        }
+
+        .autocomplete-ticker-suggestions {
+          position: absolute;
+          height: 400px;
+          width: 300px;
+          border-radius: 6px;
+          box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, 0.05);
+          border: 1px solid #f3f3f3;
+          right: 0;
+          top: 42px;
+          background-color: #fff;
+          transition: 150ms ease-in-out;
+          opacity: 1;
+          visibility: visible;
+          padding: 8px;
+          overflow: auto;
+          box-sizing: border-box;
+
+          .ticker-suggestion-by-search-input {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 150ms ease-in-out;
+            position: relative;
+
+            &:hover {
+              background: #f0f2f5;
+              transition: 150ms ease-in-out;
+            }
+
+            .ticker-image-and-name-group {
+              display: flex;
+              align-items: center;
+
+              .ticker-suggestion-image {
+                border-radius: 50px;
+                width: 30px;
+                height: 30px;
+              }
+
+              .ticker-enterprise-name {
+                display: flex;
+                flex-direction: column;
+                margin-left: 8px;
+                font-size: 12px;
+
+                .ticker-name {
+                  color: #121826;
+                  font-weight: 700;
+                }
+
+                .ticker-company-name {
+                  font-weight: 400;
+                  color: #5b667c;
+                }
+              }
+            }
+
+            .ticker-type {
+              font-size: 11px;
+              color: #5b667c;
+              font-weight: 500;
+            }
+
+            + .ticker-suggestion-by-search-input {
+              // margin-top: 8px;
+            }
+          }
+
+          .ticker-not-found {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            flex-direction: column;
+            padding: 8px;
+
+            p {
+              color: #5b667c;
+              margin-top: 16px;
+              font-weight: 400;
+            }
+
+            img {
+              opacity: 0.5;
+              filter: grayscale(0.6);
+              width: 50px;
+              height: 50px;
+            }
+          }
+        }
+
+        .autocomplete-ticker-suggestions-closed {
+          opacity: 0;
+          visibility: hidden;
+          transition: 150ms ease-in-out;
+        }
+      }
+    }
+  }
+}
