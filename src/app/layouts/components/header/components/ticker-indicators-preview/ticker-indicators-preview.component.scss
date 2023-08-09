@@ -1,0 +1,212 @@
+.ticker-indicators-preview {
+  position: absolute;
+  right: 298px;
+  top: 42px;
+  // height: 400px;
+  max-width: 300px;
+  width: 100%;
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, 0.05);
+  border: 1px solid #f3f3f3;
+  box-sizing: border-box;
+  visibility: visible;
+  opacity: 1;
+  transition: 150ms ease-in-out;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+
+  &.hidden-ticker-indicators-preview {
+    visibility: hidden;
+    opacity: 0;
+    transition: 150ms ease-in-out;
+  }
+
+  .suggested-ticker-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 16px;
+    border-bottom: 1px solid #EFF2F5;
+
+    .suggested-ticker-image-and-name {
+      display: flex;
+  
+      .suggested-ticker-image {
+        border-radius: 50px;
+        width: 50px;
+        height: 50px;
+      }
+
+      .suggested-ticker {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+        margin-left: 8px;
+
+        .ticker {
+          color: #121826;
+          font-weight: 700;
+        }
+
+        .company {
+          color: #5B667C;
+          font-weight: 400;
+        }
+      }
+    }
+
+    .ticker-price-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+
+      .ticker-current-quotation-price {
+        font-weight: 600;
+      }
+  
+      .ticker-current-change-percentage {
+        text-align: right;
+        font-size: 12px;
+        font-weight: 500;
+
+        &.negative-close-day {
+          color: #EA3943;
+        }
+
+        &.positive-close-day {
+          color: #16C784;
+        }
+      }
+    }
+  }
+
+  .indicator-title {
+    font-size: 14px;
+    margin: 16px 0 0 16px;
+  }
+
+  .target-price-indicators {
+    padding: 16px;
+    // margin: 16px 16px 0 16px;
+    box-sizing: border-box;
+    // background-color: #FAFAFB;
+    border-radius: 6px;
+
+    .target-price-title {
+      font-size: 12px;
+      color: var(--primary-text-color);
+      margin-bottom: 16px;
+      text-align: center;
+    }
+
+    .bazin-indicator, .graham-indicator {
+
+      .indicator-label {
+        font-size: 12px;
+        font-weight: 500;
+        color: var(--primary-text-color);
+        margin-bottom: 8px;
+      }
+
+      .input-label {
+        font-size: 10px;
+        color: var(--secondary-text-color);
+
+        + .input-label {
+          margin-left: 10px;
+        }
+      }
+
+      .target-price-label {
+        margin-left: 60px;
+        font-size: 10px;
+        color: var(--secondary-text-color);
+      }
+
+      .input-wrapper {
+        margin-top: 4px;
+        display: flex;
+        align-items: center;
+        column-gap: 22px;
+
+        .dividend-average {
+          font-size: 12px;
+          color: var(--primary-text-color);
+          font-weight: 400;
+        }
+
+        .target-price-value {
+          font-size: 12px;
+          color: var(--primary-color);
+          font-weight: 600;
+        }
+      }
+
+      .input {
+        width: 50px;
+        height: 30px;
+        text-align: center;
+        font-size: 12px;
+        color: var(--primary-text-color);
+        font-weight: 400;
+      }
+    }
+  }
+
+  .ticker-valuation-indicators {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 16px;
+
+    .valuation-indicator {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background: #FAFAFB;
+      width: calc(50% - 1px);
+      height: 60px;
+      border: 1px solid #fff;
+      border-radius: 6px;
+
+      &:hover {
+        background: #f2f2f4;
+      }
+
+      .indicator {
+        color: #5B667C;
+        font-weight: 400;
+        font-size: 12px;
+        margin-bottom: 4px;
+      }
+
+      .value {
+        color: #121826;
+        font-weight: 600;
+        font-size: 14px;
+      }
+    }
+  }
+
+  .ticker-details-link-wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 12px;
+    margin-bottom: 16px;
+    font-size: 12px;
+
+    .ticker-details-link {
+      padding: 8px 16px;
+      color: var(--primary-color);
+      font-weight: 500;
+      cursor: pointer;
+    }
+  }
+}
