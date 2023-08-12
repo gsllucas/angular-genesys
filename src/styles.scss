@@ -27,3 +27,20 @@ ul {
 .layout-internal-padding {
   padding: 0 16px;
 }
+
+.hovered {
+  &:hover {
+    background: #eff2f5;
+    transition: 150ms ease-in-out;
+  }
+}
+
+.transition {
+  transition: 150ms ease-in-out;
+}
+
+.fx-align {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
