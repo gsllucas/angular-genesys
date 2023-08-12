@@ -1,0 +1,32 @@
+<div
+  class="menu-option-tile hovered transition"
+  [ngClass]="{ active: option?.activated }"
+  (click)="selectOption.emit(option)"
+>
+  <div class="fx-align">
+    <div [ngClass]="{ 'activated-indicator': option?.activated }"></div>
+    <span class="material-symbols-rounded option-icon">
+      {{ option?.icon }}
+    </span>
+    <span class="option-label" [ngClass]="{ active: option?.activated }">{{
+      option?.label
+    }}</span>
+  </div>
+  <span
+    class="material-symbols-rounded chevron-right"
+    [ngClass]="{ 'spin': option?.expanded }"
+    *ngIf="option?.mode === 'expansion'"
+  >
+    expand_more
+  </span>
+</div>
+<div
+  [ngClass]="{ collapsed: option?.mode === 'expansion' && !option?.expanded }"
+  [ngStyle]="getExpansionSizeStyles()"
+>
+  <a
+    *ngFor="let child of option?.children"
+    class="child-option-tile hovered transition"
+    >{{ child.label }}</a
+  >
+</div>

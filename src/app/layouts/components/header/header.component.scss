@@ -35,6 +35,13 @@
       justify-content: space-between;
       height: 100%;
 
+      .genesys {
+        font-weight: 700;
+        font-size: 14px;
+        color: var(--primary-text-color);
+        cursor: pointer;
+      }
+
       .nav-menu-items {
         display: flex;
         align-items: center;

@@ -1,0 +1,11 @@
+<div class="side-menu">
+  <app-user-avatar></app-user-avatar>
+  <div class="horizontal-space"></div>
+  <app-divider></app-divider>
+  <div class="horizontal-space"></div>
+  <app-menu-tile
+    *ngFor="let option of options"
+    [option]="option"
+    (selectOption)="selectOption(option)"
+  ></app-menu-tile>
+</div>
