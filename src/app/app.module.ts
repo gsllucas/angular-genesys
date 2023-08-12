@@ -11,6 +11,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { HeaderModule } from './layouts/components/header/header.module';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MenuModule } from './layouts/components/menu/menu.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -26,6 +27,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HeaderModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    MenuModule,
   ],
   bootstrap: [AppComponent],
 })
