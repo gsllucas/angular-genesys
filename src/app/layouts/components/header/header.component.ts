@@ -213,6 +213,5 @@ export class HeaderComponent implements OnInit, OnDestroy {
       (element) => element.label === toolbarOption.label
     );
     this.toolbarOptions[index].hovered = index !== -1 && show;
-    console.log();
   }
 }
