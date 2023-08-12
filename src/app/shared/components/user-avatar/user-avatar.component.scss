@@ -1,0 +1,44 @@
+.touchable-area {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+
+  .user-avatar-wrapper {
+    display: flex;
+    align-items: center;
+    column-gap: 12px;
+  
+    .name-letter-radius {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #FAFAFB;
+      font-size: 16px;
+      font-weight: 600;
+    }
+  
+    .user-name {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--primary-text-color);
+      margin-bottom: 2px;
+    }
+  
+    .account-plan {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.25px;
+      color: var(--secondary-text-color);
+      font-weight: 300;
+    }
+  }
+
+  .icon {
+    font-size: 16px;
+    color: var(--secondary-text-color);
+  }
+}
