@@ -1,0 +1,67 @@
+.dashboard {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  column-gap: 24px;
+  grid-template-columns: 2fr 1fr;
+
+  .user-portfolio-assets {
+    // background-color: antiquewhite;
+
+    .resume-by-assets {
+      display: flex;
+      width: 100%;
+      column-gap: 16px;
+
+      .resume-by-asset-indicator {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        background: var(--light-gray);
+        padding: 8px;
+        height: 100px;
+        border-radius: 6px;
+
+        .indicator {
+          font-size: 24px;
+          color: var(--primary-text-color);
+          font-weight: 700;
+          margin-bottom: 2px;
+        }
+
+        .label {
+          font-size: 14px;
+          color: var(--secondary-text-color);
+          font-weight: 400;
+        }
+      }
+    }
+  }
+
+  .user-portfolio-resume {
+    box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, 0.05);
+  }
+
+  .user-portfolio-assets {
+    .asset {
+      // box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, 0.05);
+      width: 100%;
+      border-radius: 6px;
+      // border: 1px solid #F3F3F3;
+      background: #FFF;
+      padding: 24px;
+
+      .ticker-image {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+      }
+
+      + .asset {
+        margin-top: 10px;
+      }
+    }
+  }
+}
