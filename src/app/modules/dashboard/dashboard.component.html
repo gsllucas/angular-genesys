@@ -1,0 +1,19 @@
+<section class="dashboard">
+  <div class="user-portfolio-assets">
+    <!-- <div class="resume-by-assets">
+      <div class="resume-by-asset-indicator">
+        <span class="indicator">10</span>
+        <span class="label">Ativos</span>
+      </div>
+      <div class="resume-by-asset-indicator"></div>
+      <div class="resume-by-asset-indicator"></div>
+    </div> -->
+    <div *ngFor="let asset of assets" class="asset">
+      <img class="ticker-image" src="https://s3-symbol-logo.tradingview.com/vale--big.svg" />
+      <div class="ticker-indicators">
+        <div class="ticker-indicator"></div>
+      </div>
+    </div>
+  </div>
+  <aside class="user-portfolio-resume">Resumo</aside>
+</section>
