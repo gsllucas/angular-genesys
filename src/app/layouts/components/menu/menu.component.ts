@@ -49,12 +49,12 @@ export class MenuComponent {
     if (index !== -1) {
       this.options.map((element) => (element.activated = false));
       this.options[index].activated = true;
-      if (
-        option?.expanded !== null &&
-        this.options[index].mode === 'expansion'
-      ) {
-        this.options[index].expanded = !this.options[index].expanded;
-      }
+      const isExpansion =
+        option?.expanded !== null && this.options[index].mode === 'expansion';
+      if (isExpansion) this.toggleExpandedState(index);
     }
   }
+
+  toggleExpandedState = (index: number) =>
+    (this.options[index].expanded = !this.options[index].expanded);
 }
