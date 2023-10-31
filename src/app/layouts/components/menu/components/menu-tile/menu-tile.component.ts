@@ -35,7 +35,7 @@ export class MenuTileComponent {
 
   getExpansionSizeStyles() {
     if (this.option?.mode === 'expansion' && this.option?.expanded) {
-      const height = 30;
+      const height = 48;
       const maxHeight = !!this.option?.children
         ? this.option?.children?.length * height
         : 0;
