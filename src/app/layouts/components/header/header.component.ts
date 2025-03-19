@@ -150,7 +150,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.onSearchInputChanges();
-    // this.getSuggestions();f
+    this.getSuggestions();
     this.filteredSuggestionsBySeachInput = this.fakeSuggestionsTickers;
   }
 
